@@ -12,15 +12,13 @@ const showVehicle = (req, res) => {
 }
 
 //post vehicle
-const createVehicle = () => {
-  router.post('/vehicle', (req, res) => {
+const createVehicle = (req, res) => {
   let counter = vehicles.length + 1;
   let newVehicle = req.body;
   newVehicle._id = counter;
   newVehicle.postId = 1;
   vehicles.push(newVehicle);
   return res.json(vehicles);
-});
 }
 
 

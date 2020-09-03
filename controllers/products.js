@@ -12,15 +12,13 @@ const showProduct = (req, res) => {
 }
 
 //post product
-const createProduct = () => {
-  app.post('/products', (req, res) => {
+const createProduct = (req, res) => {
   let counter = products.length + 1;
   let newProduct = req.body;
   newProduct._id = counter;
   newProduct.postId = 1;
   products.push(newProduct);
   return res.json(products);
-});
 }
 
 module.exports = { listProducts, showProduct, createProduct }

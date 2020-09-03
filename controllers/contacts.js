@@ -12,15 +12,13 @@ const showContact = (req, res) => {
 }
 
 //post contact
-const createContact = () => {
-  app.post('/contacts', (req, res) => {
+const createContact = (req, res) => {
   let counter = contacts.length + 1;
   let newContact = req.body;
   newContact._id = counter;
   newContact.postId = 1;
   contacts.push(newContact);
   return res.json(contacts);
-});
 }
 
 module.exports = { listContacts, showContact, createContact }
